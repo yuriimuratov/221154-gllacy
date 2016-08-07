@@ -3,10 +3,303 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="inner-page">
+    <div class="container">
+      <header class="main-header">
+        <div class="header-column-left">
+          <div class="header-logo">
+            <img src="img/header-logo.svg" width="149" height="62" alt="GllacyShop">
+          </div>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>
+          <nav class="header-menu">
+            <ul>
+              <li>
+                <a href="#">Каталог</a>
+                <ul class="header-submenu">
+                  <li class="latest">
+                    <a href="#">Новинки</a>
+                  </li>
+                  <li>
+                    <a href="#">Сливочное</a>
+                  </li>
+                  <li>
+                    <a href="#">Щербеты</a>
+                  </li>
+                  <li>
+                    <a href="#">Фруктовый лёд</a>
+                  </li>
+                  <li>
+                    <a href="#">Мелорин</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Доставка и оплата</a>
+              </li>
+              <li>
+                <a href="#">О Компании</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="header-column-right">
+          <div class="search">
+            <a class="search-link" href="#">Поиск</a>
+            <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+              <input type="text" name="search" placeholder="Что ищем?">
+              <!-- If there is no submit element then validator warning appearing: -->
+              <!-- This form does not appear to contain a submit control so that the form data can be submitted -->
+              <!-- in the normal way. Consider using an "input" element with type="submit" or type="image" or a -->
+              <!-- "button" element with type="submit". -->
+              <!-- i can ignore the warning or do display:none with this element -->
+              <input type="submit" style="display:none">
+            </form>
+          </div>
 
+          <div class="login">
+            <a class="login-link" href="#">Вход</a>
+            <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+              <input type="email" name="email" placeholder="Электронная почта" required="">
+              <input type="password" name="password" placeholder="Пароль" required="">
+              <button type="submit">Войти</button>
+              <a href="#">Забыли пароль?</a>
+              <a href="#">Регистрация</a>
+            </form>
+          </div>
+
+          <div class="cart">
+            <a class="cart-link" href="#">Корзина</a>
+            <div class="cart-popup">
+              <table>
+                <tr>
+                  <td>
+                    <!-- If i decide to implement item-delete icon with sprites then i got validator warning: -->
+                    <!-- The "a" element (with class="item-delete") contains no link text. Although link text is -->
+                    <!-- not technically required, it is unusual not to have any. Should this element contain -->
+                    <!-- link text or another element like "img" with alt text? -->
+                    <a href="#" class="item-delete" title="Удалить"></a>
+                  </td>
+                  <td>
+                    <img src="img/cart/orange.png" width="33" height="33" alt="orange icon">
+                  </td>
+                  <td>Пломбир с апельсиновым джемом</td>
+                  <td>1.5 кг <span>х 200 руб.</span></td>
+                  <td>300 руб.</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <!-- If i decide to implement item-delete icon with sprites then i got validator warning: -->
+                    <!-- The "a" element (with class="item-delete") contains no link text. Although link text is -->
+                    <!-- not technically required, it is unusual not to have any. Should this element contain -->
+                    <!-- link text or another element like "img" with alt text? -->
+                    <a href="#" class="item-delete" title="Удалить"></a>
+                  </td>
+                  <td>
+                    <img src="img/cart/strawberry.png" width="33" height="33" alt="strawberry icon">
+                  </td>
+                  <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+                  <td>1.5 кг <span>х 300 руб.</span></td>
+                  <td>450 руб.</td>
+                </tr>
+              </table>
+              <div class="cost">Итого: 750 руб.</div>
+              <a href="#" class="btn btn-cart">Оформить заказ</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="schedule-and-phone">
+          <span class="schedule">с 10 до 20, ежедневно</span>
+          <span class="phone">8 812 450-25-25</span>
+        </section>
+
+        <section class="slider">
+          <input type="radio" id="btn-1" name="toggle" value="slide-1" checked>
+          <input type="radio" id="btn-2" name="toggle" value="slide-2">
+          <input type="radio" id="btn-3" name="toggle" value="slide-3">
+
+          <div class="slider-controls">
+            <label for="btn-1"></label>
+            <label for="btn-2"></label>
+            <label for="btn-3"></label>
+          </div>
+
+          <div class="slider-inner">
+            <div class="slide-1" id="slide-1">
+              <h2 class="slide-title">Крем-брюле и пломбир с малиновым джемом</h2>
+              <a href="#" class="btn btn-slider">Давайте оба!</a>
+            </div>
+
+            <div class="slide-2" id="slide-2">
+              <h2 class="slide-title">Шоколадный пломбир и лимонный сорбет</h2>
+              <a href="#" class="btn btn-slider">Давайте оба!</a>
+            </div>
+
+            <div class="slide-3" id="slide-3">
+              <h2 class="slide-title">Пломбир с помадкой и клубничный щербет</h2>
+              <a href="#" class="btn btn-slider">Давайте оба!</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="inner-columns clearfix">
+          <section class="banner-raspberry banner inner-column-left">
+            <h2 class="banner-title">Малинка даром!</h2>
+            <p class="banner-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+            <a href="#" class="btn">Хочу варенье!</a>
+          </section>
+
+          <section class="banner-chocolate banner inner-column-right">
+            <h2 class="banner-title">Шоколадки даром!</h2>
+            <p class="banner-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки  абсолютно бесплатно.</p>
+            <a href="#" class="btn">Хочу шоколадки!</a>
+          </section>
+        </div>
+
+        <div class="hit-items">
+          <article class="item">
+            <figure class="item-image">
+              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
+              <img src="img/orange.png" width="267" height="267" alt="orange">
+            </figure>
+            <p class="item-price">
+              <span>300<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
+            </p>
+            <h3 class="item-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
+          </article>
+
+          <article class="item">
+            <figure class="item-image">
+              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
+              <img src="img/coffee.png" width="267" height="267" alt="coffee">
+            </figure>
+            <p class="item-price">
+              <span>380<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
+            </p>
+            <h3 class="item-title">Сливочно-кофейное с кусочками шоколада</h3>
+          </article>
+
+          <article class="item">
+            <figure class="item-image">
+              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
+              <img src="img/strawberry.png" width="267" height="267" alt="strawberry">
+            </figure>
+            <p class="item-price">
+              <span>355<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
+            </p>
+            <h3 class="item-title">Сливочно-клубничное с присыпкой из белого шоколада</h3>
+          </article>
+
+          <article class="item">
+            <figure class="item-image">
+              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
+              <img src="img/caramel.png" width="267" height="267" alt="caramel">
+            </figure>
+            <p class="item-price">
+              <span>415<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
+            </p>
+            <h3 class="item-title">Сливочное крем-брюле с карамельной подливкой</h3>
+          </article>
+        </div>
+
+        <section class="seo-content">
+          <h1 class="seo-title">Магазин Глейси  — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h1>
+          <div class="seo-row-1 inner-columns clearfix">
+            <div class="inner-column-left">
+            <!-- icon can be implemented with <p class="inner-column-left">seo text</p> and css
+            .seo-row-1:first-child::before{} without div wrapper. Is it semantic correctly? -->
+              <p>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
+            </div>
+            <div class="inner-column-right">
+              <p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
+            </div>
+          </div>
+
+          <div class="seo-row-2 inner-columns clearfix">
+            <div class="inner-column-left">
+              <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
+            </div>
+            <div class="inner-column-right">
+              <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="inner-columns clearfix">
+          <section class="blog-news inner-column-left">
+            <p>Новое в нашем блоге</p>
+            <a href="#">10&nbsp; способов сервировки фруктовых щербетов к столу</a>
+          </section>
+
+          <section class="subscribe inner-column-right">
+            <div class="inner-subscribe">
+              <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
+              <form class="subscribe-form" method="post" action="https://echo.htmlacademy.ru">
+                <input type="email" name="email" placeholder="Электронная почта" required>
+                <button type="submit">Отправить</button>
+              </form>
+            </div>
+          </section>
+        </div>
+
+        <section class="contacts">
+          <div class="contacts-map"><!-- yandex maps javascript --></div>
+          <div class="contacts-info">
+            <p>Адрес главного офиса и<br> офлайн магазина:</p>
+            <p><strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
+            <p>Для заказов по телефону:</p>
+            <a class="contacts-phone" href="tel:+78124502525">8 812 450-25-25</a>
+            <p>(с 10 до 20 ежедневно)</p>
+            <a class="btn" href="#">Форма обратной связи</a>
+            <div class="feedback-form-overlay"></div>
+            <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+              <fieldset class="feedback-form-inner">
+                <legend>Мы обязательно вам ответим!</legend>
+                <input type="text" name="username" placeholder="Как вас зовут?" required>
+                <input type="email" name="email" placeholder="Ваша почта для ответа?" required>
+                <textarea name="comment" placeholder="Напишите что-нибудь..." required></textarea>
+                <!-- this button will be positioned relatively in top right corner of .feedback-form-inner -->
+                <button class="feedback-form-close" type="button" title="Закрыть"><!-- css sprite --></button>
+                <!-- end of comment -->
+                <button type="submit">Отправить</button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <section class="footer-social">
+          <a class="social-btn social-btn-twit" href="#">Твиттер</a>
+          <a class="social-btn social-btn-inst" href="#">Инстаграмм</a>
+          <a class="social-btn social-btn-fb" href="#">Фейсбук</a>
+          <a class="social-btn social-btn-vk" href="#">ВКонтакте</a>
+        </section>
+
+        <section class="footer-center inner-columns clearfix">
+          <div class="inner-column-left">
+            <a class="heart-marked" href="#">Для поставщиков</a>
+            <a href="#">О производстве</a>
+          </div>
+
+          <div class="inner-column-right">
+            <a href="#">Наши документы</a>
+            <a href="#">Экологические стандарты</a>
+          </div>
+        </section>
+
+        <section class="footer-copyright">
+          <img src="img/htmlacademy-logo.svg" width="108" height="37" alt="html academy">
+          <p>Сделано в <a href="https://htmlacademy.ru/">HTML Academy</a> &#169; 2016</p>
+        </section>
+      </footer>
+    </div>
   </body>
 </html>
