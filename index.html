@@ -48,23 +48,31 @@
         
         <div class="header-column-right">
           <div class="search">
-            <a class="search-link" href="#">Поиск</a>
             <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
-              <input type="text" name="search" placeholder="Что ищем?">
-              <!-- If there is no submit element then validator warning appearing: -->
-              <!-- This form does not appear to contain a submit control so that the form data can be submitted -->
-              <!-- in the normal way. Consider using an "input" element with type="submit" or type="image" or a -->
-              <!-- "button" element with type="submit". -->
-              <!-- i can ignore the warning or do display:none with this element -->
-              <input type="submit" style="display:none">
+              <div>
+                <input type="text" name="search">
+                <div class="label-box">
+                  <label>Что ищем?</label>
+                </div>
+              </div>
             </form>
           </div>
 
           <div class="login">
-            <a class="login-link" href="#">Вход</a>
+            <span>Вход</span>
             <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
-              <input type="email" name="email" placeholder="Электронная почта" required="">
-              <input type="password" name="password" placeholder="Пароль" required="">
+              <div>
+                <input type="email" name="email" placeholder="Электронная почта" required>
+                <div class="label-box">
+                  <label>Электронная почта</label>
+                </div>
+              </div>
+              <div>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <div class="label-box">
+                    <label>Пароль</label>
+                </div>
+              </div>
               <button type="submit">Войти</button>
               <a href="#">Забыли пароль?</a>
               <a href="#">Регистрация</a>
@@ -72,16 +80,12 @@
           </div>
 
           <div class="cart">
-            <a class="cart-link" href="#">Корзина</a>
+            <span>Корзина</span>
             <div class="cart-popup">
-              <table>
+              <table class="cart-table">
                 <tr>
                   <td>
-                    <!-- If i decide to implement item-delete icon with sprites then i got validator warning: -->
-                    <!-- The "a" element (with class="item-delete") contains no link text. Although link text is -->
-                    <!-- not technically required, it is unusual not to have any. Should this element contain -->
-                    <!-- link text or another element like "img" with alt text? -->
-                    <a href="#" class="item-delete" title="Удалить"></a>
+                    <button class="item-delete" title="Удалить"></button>
                   </td>
                   <td>
                     <img src="img/cart/orange.png" width="33" height="33" alt="orange icon">
@@ -93,11 +97,7 @@
 
                 <tr>
                   <td>
-                    <!-- If i decide to implement item-delete icon with sprites then i got validator warning: -->
-                    <!-- The "a" element (with class="item-delete") contains no link text. Although link text is -->
-                    <!-- not technically required, it is unusual not to have any. Should this element contain -->
-                    <!-- link text or another element like "img" with alt text? -->
-                    <a href="#" class="item-delete" title="Удалить"></a>
+                    <button class="item-delete" title="Удалить"></button>
                   </td>
                   <td>
                     <img src="img/cart/strawberry.png" width="33" height="33" alt="strawberry icon">
@@ -106,21 +106,25 @@
                   <td>1.5 кг <span>х 300 руб.</span></td>
                   <td>450 руб.</td>
                 </tr>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">Итого: 750 руб.</td>
+                  </tr>
+                </tfoot>
               </table>
-              <div class="cost">Итого: 750 руб.</div>
               <a href="#" class="btn btn-cart">Оформить заказ</a>
             </div>
           </div>
         </div>
-      </header>
 
-      <main class="main-content">
         <section class="schedule-and-phone">
           <span class="schedule">с 10 до 20, ежедневно</span>
           <span class="phone">8 812 450-25-25</span>
         </section>
+      </header>
 
-        <section class="slider">
+      <main class="main-content">
+        <div class="slider">
           <input type="radio" id="btn-1" name="toggle" value="slide-1" checked>
           <input type="radio" id="btn-2" name="toggle" value="slide-2">
           <input type="radio" id="btn-3" name="toggle" value="slide-3">
@@ -147,131 +151,116 @@
               <a href="#" class="btn btn-slider">Давайте оба!</a>
             </div>
           </div>
-        </section>
+        </div>
 
-        <div class="inner-columns clearfix">
-          <section class="banner-raspberry banner inner-column-left">
-            <h2 class="banner-title">Малинка даром!</h2>
+        <aside class="inner-columns clearfix">
+          <section class="banner banner-raspberry inner-column-left">
+            <h3 class="banner-title">Малинка даром!</h3>
             <p class="banner-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
             <a href="#" class="btn">Хочу варенье!</a>
           </section>
 
-          <section class="banner-chocolate banner inner-column-right">
-            <h2 class="banner-title">Шоколадки даром!</h2>
+          <section class="banner banner-chocolate inner-column-right">
+            <h3 class="banner-title">Шоколадки даром!</h3>
             <p class="banner-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки  абсолютно бесплатно.</p>
             <a href="#" class="btn">Хочу шоколадки!</a>
           </section>
-        </div>
+        </aside>
 
-        <div class="hit-items">
+        <section class="hit-items">
           <article class="item">
             <figure class="item-image">
-              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
+              <!-- hit label must be implemented with css .item-image img::before{} -->
               <img src="img/orange.png" width="267" height="267" alt="orange">
             </figure>
             <p class="item-price">
               <span>300<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
-            <h3 class="item-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
+            <h1 class="item-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h1>
           </article>
 
           <article class="item">
             <figure class="item-image">
-              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
               <img src="img/coffee.png" width="267" height="267" alt="coffee">
             </figure>
             <p class="item-price">
               <span>380<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
-            <h3 class="item-title">Сливочно-кофейное с кусочками шоколада</h3>
+            <h1 class="item-title">Сливочно-кофейное с кусочками шоколада</h1>
           </article>
 
           <article class="item">
             <figure class="item-image">
-              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
               <img src="img/strawberry.png" width="267" height="267" alt="strawberry">
             </figure>
             <p class="item-price">
               <span>355<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
-            <h3 class="item-title">Сливочно-клубничное с присыпкой из белого шоколада</h3>
+            <h1 class="item-title">Сливочно-клубничное с присыпкой из белого шоколада</h1>
           </article>
 
           <article class="item">
             <figure class="item-image">
-              <div class="item-label"></div> <!-- can be implemented with css .item-image img::before{} ? -->
               <img src="img/caramel.png" width="267" height="267" alt="caramel">
             </figure>
             <p class="item-price">
               <span>415<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
-            <h3 class="item-title">Сливочное крем-брюле с карамельной подливкой</h3>
+            <h1 class="item-title">Сливочное крем-брюле с карамельной подливкой</h1>
           </article>
-        </div>
-
-        <section class="seo-content">
-          <h1 class="seo-title">Магазин Глейси  — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h1>
-          <div class="seo-row-1 inner-columns clearfix">
-            <div class="inner-column-left">
-            <!-- icon can be implemented with <p class="inner-column-left">seo text</p> and css
-            .seo-row-1:first-child::before{} without div wrapper. Is it semantic correctly? -->
-              <p>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
-            </div>
-            <div class="inner-column-right">
-              <p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
-            </div>
-          </div>
-
-          <div class="seo-row-2 inner-columns clearfix">
-            <div class="inner-column-left">
-              <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
-            </div>
-            <div class="inner-column-right">
-              <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
-            </div>
-          </div>
         </section>
 
-        <div class="inner-columns clearfix">
+        <section class="seo">
+          <h1 class="seo-title">Магазин Глейси  — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h1>
+          <ul class="seo-content clearfix">
+            <!-- icons will be implemented with .seo ul li.nth-child(n)::before{}  -->
+            <li>
+              <p>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
+            </li>
+            <li>
+              <p>Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
+            </li>
+            <li>
+              <p>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</p>
+            </li>
+            <li>
+              <p>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="inner-columns clearfix">
           <section class="blog-news inner-column-left">
-            <p>Новое в нашем блоге</p>
-            <a href="#">10&nbsp; способов сервировки фруктовых щербетов к столу</a>
+            <h3>Новое в нашем блоге</h3>
+            <p><a href="#">10&nbsp; способов сервировки фруктовых щербетов к столу</a></p>
           </section>
 
           <section class="subscribe inner-column-right">
-            <div class="inner-subscribe">
               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
               <form class="subscribe-form" method="post" action="https://echo.htmlacademy.ru">
-                <input type="email" name="email" placeholder="Электронная почта" required>
+                <div>
+                  <input type="email" name="email" required>
+                  <div class="label-box">
+                    <label>Электронная почта</label>
+                  </div>
+                </div>
                 <button type="submit">Отправить</button>
               </form>
-            </div>
           </section>
-        </div>
+        </section>
 
         <section class="contacts">
           <div class="contacts-map"><!-- yandex maps javascript --></div>
-          <div class="contacts-info">
-            <p>Адрес главного офиса и<br> офлайн магазина:</p>
-            <p><strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
-            <p>Для заказов по телефону:</p>
+          <section class="contacts-info">
+            <p>Адрес главного офиса и<br> офлайн магазина:
+            <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
+
+            <p>Для заказов по телефону:
             <a class="contacts-phone" href="tel:+78124502525">8 812 450-25-25</a>
-            <p>(с 10 до 20 ежедневно)</p>
+            (с 10 до 20 ежедневно)</p>
+
             <a class="btn" href="#">Форма обратной связи</a>
-            <div class="feedback-form-overlay"></div>
-            <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
-              <fieldset class="feedback-form-inner">
-                <legend>Мы обязательно вам ответим!</legend>
-                <input type="text" name="username" placeholder="Как вас зовут?" required>
-                <input type="email" name="email" placeholder="Ваша почта для ответа?" required>
-                <textarea name="comment" placeholder="Напишите что-нибудь..." required></textarea>
-                <!-- this button will be positioned relatively in top right corner of .feedback-form-inner -->
-                <button class="feedback-form-close" type="button" title="Закрыть"><!-- css sprite --></button>
-                <!-- end of comment -->
-                <button type="submit">Отправить</button>
-              </fieldset>
-            </form>
-          </div>
+          </section>
         </section>
       </main>
 
@@ -283,16 +272,13 @@
           <a class="social-btn social-btn-vk" href="#">ВКонтакте</a>
         </section>
 
-        <section class="footer-center inner-columns clearfix">
-          <div class="inner-column-left">
-            <a class="heart-marked" href="#">Для поставщиков</a>
-            <a href="#">О производстве</a>
-          </div>
-
-          <div class="inner-column-right">
-            <a href="#">Наши документы</a>
-            <a href="#">Экологические стандарты</a>
-          </div>
+        <section class="footer-nav inner-columns clearfix">
+          <ul>
+            <li><a class="heart-marked" href="#">Для поставщиков</a></li>
+            <li><a href="#">О производстве</a></li>
+            <li><a href="#">Наши документы</a></li>
+            <li><a href="#">Экологические стандарты</a></li>
+          </ul>
         </section>
 
         <section class="footer-copyright">
@@ -301,5 +287,42 @@
         </section>
       </footer>
     </div>
+    <!-- popup windows -->
+    <div class="feedback-form-overlay"></div>
+    <div class="feedback-form">
+      <p>Мы обязательно вам ответим!</p>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <div>
+          <input type="text" name="username" required>
+          <div class="label-box">
+            <label>Как вас зовут?</label>
+          </div>
+        </div>
+
+        <div>
+          <input type="email" name="email" required>
+          <div class="label-box">
+            <label>Ваша почта для ответа?</label>
+          </div>
+        </div>
+        
+        <div>
+          <textarea name="comment" required></textarea>
+          <div class="label-box">
+            <label>Напишите что-нибудь...</label>
+          </div>
+        </div>
+
+        <!-- this button will be positioned relatively in top right corner of .feedback-form-inner -->
+        <button class="feedback-form-close" type="button" title="Закрыть"><!-- css sprite --></button>
+        <!-- end of comment -->
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+    <!-- end comment -->
+
+    <!-- scripts -->
+
+    <!-- end comment -->
   </body>
 </html>
