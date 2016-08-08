@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="inner-page">
-    <div class="container">
-      <header class="main-header">
+    <header class="main-header">
+      <div class="container">
         <div class="header-column-left">
           <div class="header-logo">
             <img src="img/header-logo.svg" width="149" height="62" alt="GllacyShop">
@@ -73,14 +73,14 @@
                     <label>Пароль</label>
                 </div>
               </div>
-              <button type="submit">Войти</button>
+              <button class="btn btn-tight" type="submit">Войти</button>
               <a href="#">Забыли пароль?</a>
               <a href="#">Регистрация</a>
             </form>
           </div>
 
           <div class="cart">
-            <span>Корзина</span>
+            <span>2 товара</span>
             <div class="cart-popup">
               <table class="cart-table">
                 <tr>
@@ -112,7 +112,7 @@
                   </tr>
                 </tfoot>
               </table>
-              <a href="#" class="btn btn-cart">Оформить заказ</a>
+              <a href="#" class="btn btn-tight">Оформить заказ</a>
             </div>
           </div>
         </div>
@@ -121,9 +121,11 @@
           <span class="schedule">с 10 до 20, ежедневно</span>
           <span class="phone">8 812 450-25-25</span>
         </section>
-      </header>
+      </div>
+    </header>
 
-      <main class="main-content">
+    <main class="main-content">
+      <div class="container">
         <div class="slider">
           <input type="radio" id="btn-1" name="toggle" value="slide-1" checked>
           <input type="radio" id="btn-2" name="toggle" value="slide-2">
@@ -138,22 +140,22 @@
           <div class="slider-inner">
             <div class="slide-1" id="slide-1">
               <h2 class="slide-title">Крем-брюле и пломбир с малиновым джемом</h2>
-              <a href="#" class="btn btn-slider">Давайте оба!</a>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
             </div>
 
             <div class="slide-2" id="slide-2">
               <h2 class="slide-title">Шоколадный пломбир и лимонный сорбет</h2>
-              <a href="#" class="btn btn-slider">Давайте оба!</a>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
             </div>
 
             <div class="slide-3" id="slide-3">
               <h2 class="slide-title">Пломбир с помадкой и клубничный щербет</h2>
-              <a href="#" class="btn btn-slider">Давайте оба!</a>
+              <a href="#" class="btn btn-big">Давайте оба!</a>
             </div>
           </div>
         </div>
 
-        <aside class="inner-columns clearfix">
+        <section class="inner-columns clearfix">
           <section class="banner banner-raspberry inner-column-left">
             <h3 class="banner-title">Малинка даром!</h3>
             <p class="banner-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
@@ -165,7 +167,7 @@
             <p class="banner-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки  абсолютно бесплатно.</p>
             <a href="#" class="btn">Хочу шоколадки!</a>
           </section>
-        </aside>
+        </section>
 
         <section class="hit-items">
           <article class="item">
@@ -177,6 +179,7 @@
               <span>300<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
             <h1 class="item-title">Сливочное с апельсиновым джемом и цитрусовой стружкой</h1>
+            <a href="#" class="btn btn-tight">Быстрый просмотр</a>
           </article>
 
           <article class="item">
@@ -187,6 +190,7 @@
               <span>380<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
             <h1 class="item-title">Сливочно-кофейное с кусочками шоколада</h1>
+            <a href="#" class="btn btn-tight">Быстрый просмотр</a>
           </article>
 
           <article class="item">
@@ -197,6 +201,7 @@
               <span>355<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
             <h1 class="item-title">Сливочно-клубничное с присыпкой из белого шоколада</h1>
+            <a href="#" class="btn btn-tight">Быстрый просмотр</a>
           </article>
 
           <article class="item">
@@ -207,6 +212,7 @@
               <span>415<img src="img/rub-icon.svg" width="32" height="37" alt="руб."></span>/кг
             </p>
             <h1 class="item-title">Сливочное крем-брюле с карамельной подливкой</h1>
+            <a href="#" class="btn btn-tight">Быстрый просмотр</a>
           </article>
         </section>
 
@@ -229,9 +235,9 @@
           </ul>
         </section>
 
-        <section class="inner-columns clearfix">
+        <aside class="inner-columns clearfix">
           <section class="blog-news inner-column-left">
-            <h3>Новое в нашем блоге</h3>
+            <h4>Новое в нашем блоге</h4>
             <p><a href="#">10&nbsp; способов сервировки фруктовых щербетов к столу</a></p>
           </section>
 
@@ -244,10 +250,10 @@
                     <label>Электронная почта</label>
                   </div>
                 </div>
-                <button type="submit">Отправить</button>
+                <button class="btn" type="submit">Отправить</button>
               </form>
           </section>
-        </section>
+        </aside>
 
         <section class="contacts">
           <div class="contacts-map"><!-- yandex maps javascript --></div>
@@ -262,9 +268,11 @@
             <a class="btn" href="#">Форма обратной связи</a>
           </section>
         </section>
-      </main>
+      </div>
+    </main>
 
-      <footer class="main-footer">
+    <footer class="main-footer">
+      <div class="container">
         <section class="footer-social">
           <ul>
             <li>
@@ -303,8 +311,9 @@
           <img src="img/htmlacademy-logo.svg" width="108" height="37" alt="html academy">
           <p>Сделано в <a href="https://htmlacademy.ru/">HTML Academy</a> &#169; 2016</p>
         </section>
-      </footer>
-    </div>
+      </div>
+    </footer>
+
     <!-- popup windows -->
     <div class="feedback-form-overlay"></div>
     <div class="feedback-form">
@@ -332,9 +341,9 @@
         </div>
 
         <!-- this button will be positioned relatively in top right corner of .feedback-form-inner -->
-        <button class="btn feedback-form-close" type="button" title="Закрыть"><!-- css sprite --></button>
+        <button class="feedback-form-close" type="button" title="Закрыть"><!-- css sprite --></button>
         <!-- end of comment -->
-        <button type="submit">Отправить</button>
+        <button class="btn" type="submit">Отправить</button>
       </form>
     </div>
     <!-- end comment -->
