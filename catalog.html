@@ -11,20 +11,17 @@
       <div class="container">
         <div class="header-column-left">
           <div class="header-logo">
-            <a href="index.html"><img src="img/header-logo.svg" width="149" height="62" alt="GllacyShop"></a>
+            <a href="index.html"><img src="img/header-logo.png" width="154" height="64" alt="GllacyShop"></a>
           </div>
 
           <nav class="header-menu">
             <ul>
-              <li class="active">
-                <span>Каталог</span>
+              <li class="active">Каталог
                 <ul class="header-submenu">
                   <li class="latest">
                     <a href="#">Новинки</a>
                   </li>
-                  <li class="active">
-                    <span>Сливочное</span>
-                  </li>
+                  <li class="active">Сливочное</li>
                   <li>
                     <a href="#">Щербеты</a>
                   </li>
@@ -135,107 +132,276 @@
         <ul class="breadcrumbs">
           <li><a href="index.html">Главная</a></li>
           <li><a href="#">Каталог</a></li>
-          <li class="current">
-            <span>Сливочное</span>
-          </li>
+          <li class="current">Сливочное</li>
         </ul>    
         <h1 class="inner-page-title">Сливочное мороженое</h1>
 
         <section class="filters">
           <form class="filters-form" method="post" action="https://echo.htmlacademy.ru">
-            <section class="filters-first-row clearfix">
-              <fieldset class="filter-sort float-left">
-                <legend>Сортировка:</legend>
-                <select class="filter-sort-select" name="sort">
-                  <option value="popular" selected>по популярности</option>
-                  <option value="cheap">сначала недорогие</option>
-                  <option value="expensive">сначала дорогие</option>
-                  <option value="fatness">по жирности</option>
-                </select>
-              </fieldset>
+            <fieldset class="filter filter-sort float-left">
+              <legend>Сортировка:</legend>
+              <select class="filter-sort-select" name="sort">
+                <option value="popular" selected>по популярности</option>
+                <option value="cheap">сначала недорогие</option>
+                <option value="expensive">сначала дорогие</option>
+                <option value="fatness">по жирности</option>
+              </select>
+            </fieldset>
 
-              <fieldset class="filter-price float-left">
-                <legend>Цена:
-                  <!-- value of .filter-price-min will be taken from input.range-min by js -->
-                  <!-- value of .filter-price-max will be taken from input.range-max by js -->
-                  <span class="filter-price-min">100</span>руб. - 
-                  <span class="filter-price-max">500</span>руб.
-                </legend>
-                <input class="range-min" name="price[min]" type="hidden" value="100">
-                <input class="range-max" name="price[max]" type="hidden" value="500">
-                <div class="range-controls">
-                  <!-- controls will change the hidden input values by js -->
-                  <!-- this can be implemented by many ways -->
-                  <!-- mentor will tell the right way :) -->
-                </div>
-              </fieldset>
-
-              <fieldset class="filter-fatness float-left">
-                <legend>Жирность:</legend>
-                <label>
-                  <input type="radio" name="fatness" value="0%"> 0%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value="<=10%" checked> до 10%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value="<=30%"> до 30%
-                </label>
-                <label>
-                  <input type="radio" name="fatness" value=">30%"> выше 30%
-                </label>
-              </fieldset>
-            </section>
-
-            <section class="filters-second-row clearfix">
-              <fieldset class="filter-fillings">
-                <legend>Наполнители:</legend>
-                <label>
-                  <input type="checkbox" name="chocolate" value="chocolate" checked> шоколадные
-                </label>
-                <label>
-                  <input type="checkbox" name="sugar" value="sugar" checked> сахарные присыпки
-                </label>
-                <label>
-                  <input type="checkbox" name="fruits" value="fruits"> фрукты
-                </label>
-                <label>
-                  <input type="checkbox" name="syrup" value="syrup"> сироп
-                </label>
-                <label>
-                  <input type="checkbox" name="jam" value="jam"> джем
-                </label>
-              </fieldset>
-
-              <div class="float-right">
-                <button class="btn btn-white" type="submit"></button>
+            <fieldset class="filter filter-price float-left">
+              <legend>Цена:
+                <!-- value of .filter-price-min will be taken from input.range-min by js -->
+                <!-- value of .filter-price-max will be taken from input.range-max by js -->
+                <span class="filter-price-min">100</span>руб. - 
+                <span class="filter-price-max">500</span>руб.
+              </legend>
+              <input class="range-min" name="price[min]" type="hidden" value="100">
+              <input class="range-max" name="price[max]" type="hidden" value="500">
+              <div class="range-controls">
+                <!-- controls will change the hidden input values by js -->
+                <!-- this can be implemented by many ways -->
+                <!-- mentor will tell the right way :) -->
               </div>
-            </section>
+            </fieldset>
+
+            <fieldset class="filter filter-fatness float-left">
+              <legend>Жирность:</legend>
+              <label>
+                <input type="radio" name="fatness" value="0%"> 0%
+              </label>
+              <label>
+                <input type="radio" name="fatness" value="<=10%" checked> до 10%
+              </label>
+              <label>
+                <input type="radio" name="fatness" value="<=30%"> до 30%
+              </label>
+              <label>
+                <input type="radio" name="fatness" value=">30%"> выше 30%
+              </label>
+            </fieldset>
+
+            <fieldset class="filter filter-fillings float-left">
+              <legend>Наполнители:</legend>
+              <label>
+                <input type="checkbox" name="chocolate" value="chocolate" checked> шоколадные
+              </label>
+              <label>
+                <input type="checkbox" name="sugar" value="sugar" checked> сахарные присыпки
+              </label>
+              <label>
+                <input type="checkbox" name="fruits" value="fruits"> фрукты
+              </label>
+              <label>
+                <input type="checkbox" name="syrup" value="syrup"> сироп
+              </label>
+              <label>
+                <input type="checkbox" name="jam" value="jam"> джем
+              </label>
+            </fieldset>
+
+            <div class="float-left">
+              <button class="btn btn-white" type="submit">Применить</button>
+            </div>
           </form>
         </section>
 
         <section class="items">
-          <!-- I will commit this changes when the link question will be resolved in index.html -->
           <!-- item-1-1-orange -->
-          <!-- item-1-2-coffee -->
-          <!-- item-1-3-strawberry -->
-          <!-- item-1-4-caramel -->
-          <!-- item-2-1-cowberry -->
-          <!-- item-2-2-billberry -->
-          <!-- item-2-3-lemon -->
-          <!-- item-2-4-chocolate -->
-          <!-- item-3-1-vanilla -->
-          <!-- item-3-2-menthol -->
-          <!-- item-3-3-black_chocolate -->
-          <!-- item-3-4-mint -->
-        </section>
+          <article class="item">
+            <figure class="item-image">
+              <!-- hit label must be implemented with css .item-image img::before{} -->
+              <a class="item-image-link" href="#">
+                <img src="img/items/orange.png" width="267" height="267" alt="orange">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>300</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
 
-        <section class="pagination">
-          <ul>
-            <li class='pagination-prev'>
-              <span><!-- css arrow prev--></span>
-            </li>
-            <li class='pagination-page'>
+          <!-- item-1-2-coffee -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/coffee.png" width="267" height="267" alt="coffee">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>380</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочно-кофейное с кусочками шоколада</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-1-3-strawberry -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/strawberry.png" width="267" height="267" alt="strawberry">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>355</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-1-4-caramel -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/caramel.png" width="267" height="267" alt="caramel">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>415</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+          
+          <!-- item-2-1-cowberry -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/cowberry.png" width="267" height="267" alt="cowberry">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>325</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с брусничным джемом</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-2-2-billberry -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/billberry.png" width="267" height="267" alt="billberry">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>410</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочно-черничное с цельными ягодами черники</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-2-3-lemon -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/lemon.png" width="267" height="267" alt="lemon">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочно-лимонное с карамельной присыпкой</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-2-4-chocolate -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/chocolate.png" width="267" height="267" alt="chocolate">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с шоколадной стружкой</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-3-1-vanilla -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/vanilla.png" width="267" height="267" alt="vanilla">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с шоколадной стружкой</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-3-2-menthol -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/menthol.png" width="267" height="267" alt="menthol">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочноe с ментоловым сиропом</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-3-3-black_chocolate -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/black_chocolate.png" width="267" height="267" alt="black_chocolate">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с кусочками черного шоколада</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <!-- item-3-4-mint -->
+          <article class="item">
+            <figure class="item-image">
+              <a class="item-image-link" href="#">
+                <img src="img/items/mint.png" width="267" height="267" alt="mint">
+              </a>
+            </figure>
+            <p class="item-price">
+              <span>375</span>/кг
+            </p>
+            <h1 class="item-title">
+              <a class="item-title-link" href="#">Сливочное с мятным сиропом</a>
+            </h1>
+            <a href="#" class="btn btn-red btn-tight">Быстрый просмотр</a>
+          </article>
+
+          <ul class="pagination">
+            <li class="pagination-prev"><!-- css arrow prev--></li>
+            <li class="pagination-page">
               <a href="#">1</a>
             </li>
             <li class="pagination-page active">
@@ -247,9 +413,7 @@
             <li class="pagination-page">
               <a href="#">4</a>
             </li>
-            <li class="pagination-next">
-              <a href="#"><!-- css arrow next--></a>
-            </li>
+            <li class="pagination-next"><!-- css arrow next--></li>
           </ul>
         </section>
       </div>
@@ -292,7 +456,7 @@
         </section>
 
         <section class="footer-copyright">
-          <img src="img/htmlacademy-logo.svg" width="108" height="37" alt="html academy">
+          <img src="img/htmlacademy-logo.png" width="108" height="38" alt="html academy">
           <p>Сделано в <a href="https://htmlacademy.ru/">HTML Academy</a> &#169; 2016</p>
         </section>
       </div>
