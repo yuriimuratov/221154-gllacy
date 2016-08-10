@@ -16,5 +16,23 @@
 }
 
 body {
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+  color: #323232;
+}
+
+/* Как обычно, я начинаю умничать. У нас в макете нету нормальной структуры заголовков, */
+/* а в тех-задании явно не указано, какие заголовки должны быть. Поэтому пишу так, как считаю нужным (по макету) */
+h1 {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: bold;
 }
