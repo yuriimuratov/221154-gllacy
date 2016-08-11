@@ -9,7 +9,7 @@
   <body class="inner-page">
     <header class="main-header">
       <div class="container">
-        <div class="header-column-left">
+        <div class="header-column float-left">
           <div class="header-logo">
             <img src="img/header-logo.png" width="154" height="64" alt="GllacyShop">
           </div>
@@ -46,7 +46,7 @@
           </nav>
         </div>
         
-        <div class="header-column-right">
+        <div class="header-column float-right">
           <div class="search">
             <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
               <div>
@@ -67,15 +67,18 @@
                   <label for="login-email">Электронная почта</label>
                 </div>
               </div>
+
               <div>
                 <input id="login-password" type="password" name="password" required>
                 <div class="label-box">
                     <label for="login-password">Пароль</label>
                 </div>
               </div>
+
               <div class="float-left">
                 <button class="btn btn-red btn-tight" type="submit">Войти</button>
               </div>
+
               <div class="float-right">
                 <a href="#">Забыли пароль?</a>
                 <a href="#">Регистрация</a>
@@ -133,7 +136,7 @@
         </div>
 
         <section class="inner-columns clearfix">
-          <section class="banner banner-raspberry inner-column-left">
+          <section class="banner-raspberry inner-column float-left">
             <h3 class="banner-title">Малинка даром!</h3>
             <p class="banner-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
             <div class="float-right">
@@ -141,7 +144,7 @@
             </div>
           </section>
 
-          <section class="banner banner-chocolate inner-column-right">
+          <section class="banner-chocolate inner-column float-right">
             <h3 class="banner-title">Шоколадки даром!</h3>
             <p class="banner-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки  абсолютно бесплатно.</p>
             <div class="float-right">
@@ -216,7 +219,6 @@
         <section class="seo">
           <h1 class="seo-title">Магазин Глейси  — это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h1>
           <ul class="seo-content clearfix">
-            <!-- icons will be implemented with .seo ul li.nth-child(n)::before{}  -->
             <li class="seo-text-manufacturing">
               <p>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</p>
             </li>
@@ -233,12 +235,12 @@
         </section>
 
         <aside class="inner-columns clearfix">
-          <section class="blog-news inner-column-left">
+          <section class="blog-news inner-column float-left">
             <h4>Новое в нашем блоге</h4>
             <p><a href="#">10&nbsp; способов сервировки фруктовых щербетов к столу</a></p>
           </section>
 
-          <section class="subscribe inner-column-right">
+          <section class="subscribe inner-column float-right">
               <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
               <form class="subscribe-form" method="post" action="https://echo.htmlacademy.ru">
                 <div>
@@ -247,6 +249,7 @@
                     <label for="subscribe-email">Электронная почта</label>
                   </div>
                 </div>
+
                 <div class="float-right">
                   <button class="btn btn-red" type="submit">Отправить</button>
                 </div>
@@ -289,10 +292,10 @@
           </ul>
         </section>
 
-        <section class="footer-nav inner-columns clearfix">
+        <section class="footer-nav clearfix">
           <ul>
-            <li>
-              <a class="heart-marked" href="#">Для поставщиков</a>
+            <li class="heart-icon">
+              <a href="#">Для поставщиков</a>
             </li>
             <li>
               <a href="#">О производстве</a>
@@ -314,14 +317,14 @@
     </footer>
 
     <!-- popup windows -->
-    <div class="feedback-form-overlay popup-modal">
-      <div class="feedback-form">
+    <div class="overlay">
+      <div class="feedback-popup-modal">
         <p>Мы обязательно вам ответим!</p>
-        <form action="https://echo.htmlacademy.ru" method="post">
+        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
           <div>
-            <input id="username" type="text" name="username" required>
+            <input id="feedback-username" type="text" name="username" required>
             <div class="label-box">
-              <label for="username">Как вас зовут?</label>
+              <label for="feedback-username">Как вас зовут?</label>
             </div>
           </div>
 
@@ -333,9 +336,9 @@
           </div>
           
           <div>
-            <textarea id="comment" name="comment" required></textarea>
+            <textarea id="feedback-comment" name="comment" required></textarea>
             <div class="label-box">
-              <label for="comment">Напишите что-нибудь...</label>
+              <label for="feedback-comment">Напишите что-нибудь...</label>
             </div>
           </div>
           <!-- this button will be positioned relatively in top right corner of .feedback-form -->
