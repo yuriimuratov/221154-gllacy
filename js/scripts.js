@@ -25,65 +25,65 @@ ymaps.ready(function() {
   a.controls.remove("routeEditor")
 });
 
-var overlay = document.querySelector(".overlay");
-var popup = document.querySelector(".feedback-popup-modal");
-var link = document.querySelector("#feedback-button");
-var close = popup.querySelector(".feedback-popup-modal-close");
-var form = popup.querySelector(".feedback-form");
-var username = popup.querySelector("#feedback-username");
-var email = popup.querySelector("#feedback-email");
-var comment = popup.querySelector("#feedback-comment");
-var storage_user = localStorage.getItem("feedback-username");
-var storage_email = localStorage.getItem("feedback-email");
 
-link.addEventListener("click", function(event) {
-  event.preventDefault();
-  popup.classList.add("feedback-popup-modal-show");
-  overlay.classList.add("overlay-show");
-  if (storage_user && storage_email) {
-    username.value = storage_user;
-    email.value = storage_email;
-    comment.focus();
-  } else {
-    username.focus();
-  }
-});
+(function() {  
+  var overlay = document.querySelector(".overlay");
+  var popup = document.querySelector(".feedback-popup");
+  var link = document.querySelector("#feedback-button");
+  var close = popup.querySelector(".feedback-popup-close");
+  var form = popup.querySelector(".feedback-form");
+  var username = popup.querySelector("#feedback-username");
+  var email = popup.querySelector("#feedback-email");
+  var comment = popup.querySelector("#feedback-comment");
+  var storage_user = localStorage.getItem("feedback-username");
+  var storage_email = localStorage.getItem("feedback-email");
 
-close.addEventListener("click", function(event) {
-  event.preventDefault();
-  popup.classList.remove("feedback-popup-modal-show");
-  popup.classList.remove("feedback-popup-modal-error");
-  overlay.classList.remove("overlay-show");
-});
-
-form.addEventListener("submit", function(event) {
-  if (username.value && email.value ) {
-    localStorage.setItem("feedback-username", username.value);
-    localStorage.setItem("feedback-email", email.value);
-  } else {
+  link.addEventListener("click", function(event) {
     event.preventDefault();
-    popup.classList.remove("feedback-popup-modal-error");
-    popup.classList.add("feedback-popup-modal-error");
-  }
-});
+    popup.classList.add("feedback-popup-show");
+    overlay.classList.add("overlay-show");
+    if (storage_user && storage_email) {
+      username.value = storage_user;
+      email.value = storage_email;
+      comment.focus();
+    } else {
+      username.focus();
+    }
+  });
 
-window.addEventListener("keydown", function(event) {
-  if (event.keyCode === 27) {
-    if (popup.classList.contains("feedback-popup-modal-show")) {
-      popup.classList.remove("feedback-popup-modal-show");
-      popup.classList.remove("feedback-popup-modal-error");
+  close.addEventListener("click", function(event) {
+    event.preventDefault();
+    popup.classList.remove("feedback-popup-show");
+    popup.classList.remove("feedback-popup-error");
+    overlay.classList.remove("overlay-show");
+  });
+
+  form.addEventListener("submit", function(event) {
+    if (username.value && email.value ) {
+      localStorage.setItem("feedback-username", username.value);
+      localStorage.setItem("feedback-email", email.value);
+    } else {
+      event.preventDefault();
+      popup.classList.remove("feedback-popup-error");
+      popup.classList.add("feedback-popup-error");
+    }
+  });
+
+  window.addEventListener("keydown", function(event) {
+    if (event.keyCode === 27) {
+      if (popup.classList.contains("feedback-popup-show")) {
+        popup.classList.remove("feedback-popup-show");
+        popup.classList.remove("feedback-popup-error");
+        overlay.classList.remove("overlay-show");
+      }
+    }
+  });
+
+  overlay.addEventListener("click", function(event) {
+    if (popup.classList.contains("feedback-popup-show")) {
+      popup.classList.remove("feedback-popup-show");
+      popup.classList.remove("feedback-popup-error");
       overlay.classList.remove("overlay-show");
     }
-  }
-});
-
-overlay.addEventListener("click", function(event) {
-  if (popup.classList.contains("feedback-popup-modal-show")) {
-    popup.classList.remove("feedback-popup-modal-show");
-    popup.classList.remove("feedback-popup-modal-error");
-    overlay.classList.remove("overlay-show");
-  }
-});
-
-
-
+  });
+}());
