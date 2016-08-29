@@ -335,10 +335,9 @@
     </div>
 
     <!-- popup windows -->
-    <div class="overlay"></div>
-    <div class="feedback-popup-modal">
-      <p class="feedback-title">Мы обязательно вам ответим!</p>
-      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+    <div class="feedback-popup">
+      <form class="feedback-form clearfix" action="https://echo.htmlacademy.ru" method="post">
+        <p class="feedback-title">Мы обязательно вам ответим!</p>
         <div class="input-field">
           <input class="input-default" id="feedback-username" type="text" name="username" value="" onkeyup="this.setAttribute('value', this.value);" >
           <div class="label-box">
@@ -359,8 +358,8 @@
             <label for="feedback-comment">Напишите что-нибудь...</label>
           </div>
         </div>
-        <button class="feedback-popup-modal-close" title="Закрыть"></button>
         <button class="btn btn-red float-right" type="submit">Отправить</button>
+        <button class="feedback-popup-close" type="button" title="Закрыть"></button>
       </form>
     </div>
     <!-- end comment -->
