@@ -691,7 +691,7 @@ img {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 680px;
+  width: 690px;
 }
 
 .banner {
@@ -1136,19 +1136,16 @@ img {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  margin-right: -23px;
-  width: 162px;
+  margin-right: -24px;
+  width: 163px;
   line-height: 22px;
 }
 
 .footer-copyright {
   float: right;
+  width: 191px;
   margin-right: 2.25%;
   text-align: right;
-}
-
-.footer-copyright-wrapper {
-  width: 190px;
 }
 
 .footer-copyright-img {
