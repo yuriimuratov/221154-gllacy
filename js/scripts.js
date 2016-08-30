@@ -27,7 +27,6 @@ ymaps.ready(function() {
 
 
 (function() {  
-  var overlay = document.querySelector(".overlay");
   var popup = document.querySelector(".feedback-popup");
   var link = document.querySelector("#feedback-button");
   var close = popup.querySelector(".feedback-popup-close");
@@ -41,7 +40,6 @@ ymaps.ready(function() {
   link.addEventListener("click", function(event) {
     event.preventDefault();
     popup.classList.add("feedback-popup-show");
-    overlay.classList.add("overlay-show");
     if (storage_user && storage_email) {
       username.value = storage_user;
       email.value = storage_email;
@@ -55,7 +53,6 @@ ymaps.ready(function() {
     event.preventDefault();
     popup.classList.remove("feedback-popup-show");
     popup.classList.remove("feedback-popup-error");
-    overlay.classList.remove("overlay-show");
   });
 
   form.addEventListener("submit", function(event) {
@@ -74,16 +71,14 @@ ymaps.ready(function() {
       if (popup.classList.contains("feedback-popup-show")) {
         popup.classList.remove("feedback-popup-show");
         popup.classList.remove("feedback-popup-error");
-        overlay.classList.remove("overlay-show");
       }
     }
   });
 
-  overlay.addEventListener("click", function(event) {
+  window.addEventListener("click", function(event) {
     if (popup.classList.contains("feedback-popup-show")) {
       popup.classList.remove("feedback-popup-show");
       popup.classList.remove("feedback-popup-error");
-      overlay.classList.remove("overlay-show");
     }
-  });
+  }, true);
 }());
