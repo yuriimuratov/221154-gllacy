@@ -17,6 +17,7 @@
 
 /* GENERAL STYLES */
 body {
+  min-width: 900px;
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -262,7 +263,6 @@ img {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  min-width: 900px;
   max-width: 1200px;
   font-size: 0;
 }
@@ -1075,6 +1075,11 @@ img {
   padding-bottom: 15px;
 }
 
+.main-footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .main-footer ul {
   font-size: 13px;
   line-height: 18px;
@@ -1087,8 +1092,8 @@ img {
 }
 
 .footer-social {
-  float: left;
   margin-left: 2.25%;
+  margin-right: 0.5%;
 }
 
 .footer-social .social-btn-list {
@@ -1107,10 +1112,8 @@ img {
 }
 
 .footer-nav {
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 13px;
-  width: 303px;
+  width: 346px;
 }
 
 .footer-nav .heart-icon {
@@ -1120,7 +1123,7 @@ img {
 .footer-nav .heart-icon::before {
   content: "";
   position: absolute;
-  left: -22px;
+  left: 0;
   top: 5px;
   width: 15px;
   height: 13px;
@@ -1136,13 +1139,15 @@ img {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  margin-right: -24px;
-  width: 163px;
+  padding-left: 22px;
   line-height: 22px;
 }
 
+.footer-nav-item-odd {
+  width: 117px; 
+}
+
 .footer-copyright {
-  float: right;
   width: 191px;
   margin-right: 2.25%;
   text-align: right;
@@ -1195,21 +1200,6 @@ img {
   }
 }
 
-.overlay {
-  position: fixed;
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .3);
-  z-index: 10;
-}
-
-.overlay-show {
-  display: block;
-}
-
 .feedback-popup {
   position: fixed;
   display: none;
@@ -1219,7 +1209,6 @@ img {
   width: 428px;
   min-height: 405px;
   color: #000;
-  animation: bounce .6s;
 }
 
 .feedback-popup::before {
@@ -1239,6 +1228,7 @@ img {
   padding: 16px 25px 22px 24px;
   background: #f8f7f4;
   border-radius: 10px;
+  animation: bounce .6s;
 }
 
 .feedback-popup .input-default {
@@ -1257,7 +1247,6 @@ img {
 
 .feedback-popup-show {
   display: block;
-  /*animation: bounce .6s;*/
 }
 
 .feedback-popup-error {
