@@ -62,6 +62,7 @@ ymaps.ready(function() {
     } else {
       event.preventDefault();
       popup.classList.remove("feedback-popup-error");
+      popup.offsetWidth = popup.offsetWidth;
       popup.classList.add("feedback-popup-error");
     }
   });
@@ -76,9 +77,23 @@ ymaps.ready(function() {
   });
 
   window.addEventListener("click", function(event) {
-    if (popup.classList.contains("feedback-popup-show")) {
+    if (popup.classList.contains("feedback-popup-show")
+      && !(parents(event.target).includes(form))
+      && event.target !== form
+      && event.target !== link) {
       popup.classList.remove("feedback-popup-show");
       popup.classList.remove("feedback-popup-error");
     }
-  }, true);
+  });
+
+  function parents(node) {
+    var current = node,
+      list    = [];
+    while(current.parentNode != null && current.parentNode != document.documentElement) {
+      list.push(current.parentNode);
+      current = current.parentNode;
+    }
+    return list;
+  }
+
 }());
