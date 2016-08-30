@@ -14,11 +14,10 @@
     <input type="radio" id="cream-and-strawberry" name="toggle" value="cream-and-strawberry">
 
     <div class="inner-page">
-      <div class="inner-page-wrapper">
         <header class="main-header">
           <div class="container clearfix">
             <div class="header-logo">
-              <img src="img/header-logo.png" width="154" height="64" alt="GllacyShop">
+              <img class="header-logo-img" src="img/header-logo.png" width="154" height="64" alt="GllacyShop">
             </div>
 
             <nav class="header-nav">
@@ -136,9 +135,7 @@
                 </div>
               </div>
             </section>
-          </div>
 
-          <div class="container">
             <section class="inner-columns clearfix">
               <section class="banner banner-raspberry inner-column-left">
                 <h3 class="banner-title">Малинка даром!</h3>
@@ -274,21 +271,23 @@
 
           <section class="contacts">
             <div class="contacts-map" id="ya-map"><!-- yandex maps javascript --></div>
-            <section class="contacts-info">
-              <p class="contacts-address">Адрес главного офиса и<br> офлайн магазина:<br>
-              <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
+            <div class="container">
+              <section class="contacts-info">
+                <p class="contacts-address">Адрес главного офиса и<br> офлайн магазина:<br>
+                <strong>ул. Большая Конюшенная 19/8, Санкт-Петербург</strong></p>
 
-              <p class="contacts-phone">Для заказов по телефону:<br>
-              <strong>8 812 450-25-25</strong><br>
-              (с 10 до 20 ежедневно)</p>
+                <p class="contacts-phone">Для заказов по телефону:<br>
+                <strong>8 812 450-25-25</strong><br>
+                (с 10 до 20 ежедневно)</p>
 
-              <a class="btn btn-red" id="feedback-button" href="#">Форма обратной связи</a>
-            </section>
+                <a class="btn btn-red" id="feedback-button" href="#">Форма обратной связи</a>
+              </section>
+            </div>
           </section>
         </main>
 
         <footer class="main-footer">
-          <div class="container">
+          <div class="container clearfix">
             <section class="footer-social">
               <ul class="social-btn-list">
                 <li class="social-btn-item">
@@ -304,6 +303,15 @@
                   <a class="social-btn social-btn-vk" href="#">ВКонтакте</a>
                 </li>
               </ul>
+            </section>
+
+            <section class="footer-copyright">
+              <div class="footer-copyright-wrapper">
+                <a class="footer-copyright-img-link" href="https://htmlacademy.ru/">
+                  <img class="footer-copyright-img" src="img/htmlacademy-logo.png" width="108" height="38" alt="html academy">
+                </a>
+                <p class="footer-copyright-text">Сделано в <a class="link-default" href="https://htmlacademy.ru/">HTML Academy</a> &#169; 2016</p>
+              </div>
             </section>
 
             <section class="footer-nav clearfix">
@@ -322,16 +330,8 @@
                 </li>
               </ul>
             </section>
-
-            <section class="footer-copyright">
-              <a class="footer-copyright-img-link" href="https://htmlacademy.ru/">
-                <img class="footer-copyright-img" src="img/htmlacademy-logo.png" width="108" height="38" alt="html academy">
-              </a>
-              <p class="footer-copyright-text">Сделано в <a class="link-default" href="https://htmlacademy.ru/">HTML Academy</a> &#169; 2016</p>
-            </section>
           </div>
         </footer>
-      </div>
     </div>
 
     <!-- popup windows -->
