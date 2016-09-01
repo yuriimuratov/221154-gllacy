@@ -1535,7 +1535,6 @@ img {
   padding: 16px 25px 22px 24px;
   background: #f8f7f4;
   border-radius: 10px;
-  animation: bounce .6s;
 }
 
 .feedback-popup .input-default {
@@ -1554,6 +1553,10 @@ img {
 
 .feedback-popup-show {
   display: block;
+}
+
+.feedback-popup-bounce {
+  animation: bounce .6s;
 }
 
 .feedback-popup-error {

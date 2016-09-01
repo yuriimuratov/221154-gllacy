@@ -40,6 +40,7 @@ ymaps.ready(function() {
   link.addEventListener("click", function(event) {
     event.preventDefault();
     popup.classList.add("feedback-popup-show");
+    form.classList.add("feedback-popup-bounce");
     if (storage_user && storage_email) {
       username.value = storage_user;
       email.value = storage_email;
@@ -52,6 +53,7 @@ ymaps.ready(function() {
   close.addEventListener("click", function(event) {
     event.preventDefault();
     popup.classList.remove("feedback-popup-show");
+    form.classList.remove("feedback-popup-bounce");
     form.classList.remove("feedback-popup-error");
   });
 
@@ -71,6 +73,7 @@ ymaps.ready(function() {
     if (event.keyCode === 27) {
       if (popup.classList.contains("feedback-popup-show")) {
         popup.classList.remove("feedback-popup-show");
+        form.classList.remove("feedback-popup-bounce");
         form.classList.remove("feedback-popup-error");
       }
     }
@@ -82,6 +85,7 @@ ymaps.ready(function() {
       && event.target !== form
       && event.target !== link) {
       popup.classList.remove("feedback-popup-show");
+      form.classList.remove("feedback-popup-bounce");
       form.classList.remove("feedback-popup-error");
     }
   });
