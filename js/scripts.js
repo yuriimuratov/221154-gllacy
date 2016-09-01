@@ -52,7 +52,7 @@ ymaps.ready(function() {
   close.addEventListener("click", function(event) {
     event.preventDefault();
     popup.classList.remove("feedback-popup-show");
-    popup.classList.remove("feedback-popup-error");
+    form.classList.remove("feedback-popup-error");
   });
 
   form.addEventListener("submit", function(event) {
@@ -61,9 +61,9 @@ ymaps.ready(function() {
       localStorage.setItem("feedback-email", email.value);
     } else {
       event.preventDefault();
-      popup.classList.remove("feedback-popup-error");
-      popup.offsetWidth = popup.offsetWidth;
-      popup.classList.add("feedback-popup-error");
+      form.classList.remove("feedback-popup-error");
+      form.offsetWidth = form.offsetWidth;
+      form.classList.add("feedback-popup-error");
     }
   });
 
@@ -71,7 +71,7 @@ ymaps.ready(function() {
     if (event.keyCode === 27) {
       if (popup.classList.contains("feedback-popup-show")) {
         popup.classList.remove("feedback-popup-show");
-        popup.classList.remove("feedback-popup-error");
+        form.classList.remove("feedback-popup-error");
       }
     }
   });
@@ -82,7 +82,7 @@ ymaps.ready(function() {
       && event.target !== form
       && event.target !== link) {
       popup.classList.remove("feedback-popup-show");
-      popup.classList.remove("feedback-popup-error");
+      form.classList.remove("feedback-popup-error");
     }
   });
 
