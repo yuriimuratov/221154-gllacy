@@ -93,38 +93,38 @@
               <div class="cart-popup">
                 <table class="cart-table">
                   <tbody class="cart-table-body">
-                    <tr>
-                      <td>
-                        <button class="cart-item-delete" title="Удалить"></button>
+                    <tr class="cart-table-row">
+                      <td class="cart-table-column cart-item-delete">
+                        <button class="btn-cross" title="Удалить"></button>
                       </td>
-                      <td>
-                        <img src="img/cart/orange.png" width="33" height="33" alt="orange icon">
+                      <td class="cart-table-column cart-item-image">
+                        <img class="cart-item-img" src="img/cart/orange.png" width="33" height="33" alt="orange icon">
                       </td>
-                      <td>Пломбир с апельсиновым джемом</td>
-                      <td>1.5 кг <span>х 200 руб.</span></td>
-                      <td>300 руб.</td>
+                      <td class="cart-table-column cart-item-title">Пломбир с апельсиновым джемом</td>
+                      <td class="cart-table-column cart-item-count">1.5 кг <span>х 200 руб.</span></td>
+                      <td class="cart-table-column cart-item-price">300 руб.</td>
                     </tr>
-                    <tr>
-                      <td>
-                        <button class="cart-item-delete" title="Удалить"></button>
+                    <tr class="cart-table-row">
+                      <td class="cart-table-column cart-item-delete">
+                        <button class="btn-cross" title="Удалить"></button>
                       </td>
-                      <td>
-                        <img src="img/cart/strawberry.png" width="33" height="33" alt="strawberry icon">
+                      <td class="cart-table-column cart-item-image">
+                        <img class="cart-item-img" src="img/cart/strawberry.png" width="33" height="33" alt="strawberry icon">
                       </td>
-                      <td>Клубничный пломбир с присыпкой из белого шоколада</td>
-                      <td>1.5 кг <span>х 300 руб.</span></td>
-                      <td>450 руб.</td>
+                      <td class="cart-table-column cart-item-title">Клубничный пломбир с присыпкой из белого шоколада</td>
+                      <td class="cart-table-column cart-item-count">1.5 кг <span>х 300 руб.</span></td>
+                      <td class="cart-table-column cart-item-price">450 руб.</td>
                     </tr>
                   </tbody>
                   <tfoot class="cart-table-footer">
-                    <tr>
-                      <td colspan="5">Итого: 750 руб.</td>
+                    <tr class="cart-table-row">
+                      <td class="cart-table-column cart-items-total" colspan="5">Итого: 750 руб.</td>
                     </tr>
                   </tfoot>
                 </table>
 
                 <div class="float-right">
-                  <a href="#" class="btn-red btn-tight">Оформить заказ</a>
+                  <a href="#" class="btn btn-red btn-tight">Оформить заказ</a>
                 </div>
               </div>
             </div>
@@ -443,16 +443,19 @@
             </article>
   
             <ul class="pagination">
-              <li class="pagination-prev"><!-- css arrow prev--></li>
+              <li class="pagination-prev disabled"><!-- css arrow prev--></li>
+              <li class="pagination-page active">1</li>
               <li class="pagination-page">
-                <a href="#">1</a>
+                <a href="#">2</a>
               </li>
-              <li class="pagination-page active">2</li>
               <li class="pagination-page">
                 <a href="#">3</a>
               </li>
               <li class="pagination-page">
                 <a href="#">4</a>
+              </li>
+              <li class="pagination-page">
+                <a href="#">5</a>
               </li>
               <li class="pagination-next"><!-- css arrow next--></li>
             </ul>
