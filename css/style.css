@@ -866,11 +866,8 @@ img {
 }
 
 .filter-fatness .filter-input:checked + .filter-label,
-.filter-fillings .filter-input:checked + .filter-label,
 .filter-fatness .filter-input:checked + .filter-label::before,
-.filter-fillings .filter-input:checked + .filter-label::before,
 .filter-fatness .filter-input:checked + .filter-label::after,
-.filter-fillings .filter-input:checked + .filter-label::after,
 .filter-fatness .filter-input:disabled + .filter-label,
 .filter-fillings .filter-input:disabled + .filter-label,
 .filter-fatness .filter-input:disabled + .filter-label:hover::after,
@@ -960,6 +957,7 @@ img {
   padding: 9px 32px 9px 16px;
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -973,6 +971,10 @@ img {
 .filter-sort-select:hover {
   color: #323232;
   background-color: #fff;
+}
+
+.filter-sort-select option {
+  color: #323232;
 }
 
 .filter-price {
