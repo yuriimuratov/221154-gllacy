@@ -350,7 +350,7 @@
         </div>
         
         <div class="input-field">
-          <textarea class="input-default" id="feedback-comment" name="comment" value="" onkeyup="this.setAttribute('value', this.value);" ></textarea>
+          <textarea class="input-default" id="feedback-comment" name="comment" onblur="this.setAttribute('value', this.value);" onkeyup="this.setAttribute('value', this.value);" ></textarea>
           <div class="label-box">
             <label for="feedback-comment">Напишите что-нибудь...</label>
           </div>
