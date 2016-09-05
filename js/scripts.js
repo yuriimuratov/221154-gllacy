@@ -42,8 +42,8 @@ ymaps.ready(function() {
     popup.classList.add("feedback-popup-show");
     form.classList.add("feedback-popup-bounce");
     if (storage_user && storage_email) {
-      username.value = storage_user;
-      email.value = storage_email;
+      username.setAttribute('value', storage_user);
+      email.setAttribute('value', storage_email);
       comment.focus();
     } else {
       username.focus();
