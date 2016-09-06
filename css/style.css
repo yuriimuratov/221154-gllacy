@@ -1283,6 +1283,8 @@ img {
   right: 3px;
   width: 27px;
   height: 32px;
+  -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5) );
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5) );
 }
 
 .catalog-item-title {
