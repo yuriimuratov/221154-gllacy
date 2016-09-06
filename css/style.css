@@ -155,7 +155,10 @@ img {
 .btn-white:hover {
   color: #323232;
   background-color: #ffffff;
-  border: 2px solid #ffffff;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 30px;
+  padding-right: 28px;
 }
 
 .btn-white:active {
@@ -192,20 +195,8 @@ img {
   opacity: 0.8;
 }
 
-.social-btn-twit {
-  background-image: url("../img/social/social-btn-twit.png");
-}
-
-.social-btn-inst {
-  background-image: url("../img/social/social-btn-inst.png");
-}
-
-.social-btn-fb {
-  background-image: url("../img/social/social-btn-fb.png");
-}
-
-.social-btn-vk {
-  background-image: url("../img/social/social-btn-vk.png");
+.social-btn:active svg {
+  /*filter: url("#inset-shadow");*/
 }
 
 .float-left {
@@ -220,6 +211,11 @@ img {
   content: "";
   display: table;
   clear: both;
+}
+
+.bg-transition,
+.bg-transition::before {
+  transition: background 0.5s ease-in; 
 }
 /* END GENERAL STYLES */
 
@@ -264,7 +260,6 @@ img {
   font-size: 16px;
   line-height: 24px;
   color: #999999;
-  pointer-events: none;
   cursor: text;
   transition-duration: 0.2s;
 }
@@ -287,7 +282,6 @@ img {
   position: relative;
   z-index: 0;
   background-color: #849d8f;
-  transition: background 0.5s ease-in;
 }
 
 .container {
@@ -311,6 +305,8 @@ img {
 
 .header-logo-img {
   margin-left: -6px;
+  width: 154px;
+  height: 64px;
 }
 
 .header-nav {
@@ -331,10 +327,10 @@ img {
 }
 
 .menu-item .active {
-  pointer-events: none;
   cursor: default;
   color: #ffffff;
-  background-color: #d07058;  
+  background-color: #d07058;
+  pointer-events: none;
 }
 
 .menu-item .menu-item-link {
@@ -439,11 +435,11 @@ img {
   white-space: nowrap;
 }
 
-.submenu-item-link:hover {
+.submenu-item-link:not(.active):hover {
   background-color: #fbded7;
 }
 
-.submenu-item-link:active {
+.submenu-item-link:not(.active):active {
   background-color: #f6b5a5;
 }
 
@@ -472,12 +468,6 @@ img {
   font-weight: 500;
 }
 
-.header-action::before {
-  content: "";
-  display: block;
-  position: absolute;
-}
-
 .header-action.search:hover,
 .header-action.login:hover,
 .header-action.full-cart:hover {
@@ -504,56 +494,58 @@ img {
   padding-right: 16px;
 }
 
-.header-action.search::before {
+.header-action .search-icon,
+.header-action .login-icon,
+.header-action .cart-empty-icon,
+.header-action .cart-full-icon {
+  position: absolute;
+  fill: #fff;
+}
+
+.header-action .cart-full-hover-icon {
+  position: absolute;
+  display: none;
+}
+
+.header-action .search-icon {
   top: 7px;
   left: 7px;
   width: 17px;
   height: 17px;
-  background: url('../img/icons/search-icon.png');
 }
 
-.header-action.search:hover::before {
-  top: 7px;
-  left: 7px;
-  width: 17px;
-  height: 17px;
-  background: url('../img/icons/search-hover-icon.png');
+.header-action .login-icon {
+  top: 6px;
+  left: 16px;
+  width: 20px;
+  height: 19px;
 }
 
-.header-action.login::before {
+.header-action .cart-empty-icon,
+.header-action .cart-full-icon,
+.header-action .cart-full-hover-icon {
   top: 6px;
   left: 16px;
   width: 21px;
-  height: 19px;
-  background: url('../img/icons/login-icon.png');
-}
-
-.header-action.login:hover::before {
-  top: 6px;
-  left: 16px;
-  width: 21px;
-  height: 19px;
-  background: url('../img/icons/login-hover-icon.png');
+  height: 20px;
 }
 
 .header-action.empty-cart {
   cursor: default;
 }
 
-.header-action.empty-cart::before {
-  top: 6px;
-  left: 16px;
-  width: 21px;
-  height: 19px;
-  background: url('../img/icons/cart-empty-icon.png');
+.header-action.search:hover .search-icon,
+.header-action.login:hover .login-icon,
+.header-action.full-cart:hover .cart-full-icon,
+.header-action.full-cart:hover .cart-full-hover-icon {
+  fill: #343434;
 }
 
-.header-action.full-cart::before {
-  top: 6px;
-  left: 16px;
-  width: 21px;
-  height: 19px;
-  background: url('../img/icons/cart-full-icon.png');
+.header-action.full-cart:hover .cart-full-icon {
+  display: none;
+}
+.header-action.full-cart:hover .cart-full-hover-icon {
+  display: block;
 }
 
 .header-action:hover .search-form,
@@ -1146,10 +1138,12 @@ img {
 }
 
 .banner-raspberry {
+  background-color: #650f25;
   background-image: url("../img/banners/raspberry-bg.jpg");
 }
 
 .banner-chocolate {
+  background-color: #5d3a2c;
   background-image: url("../img/banners/chocolate-bg.jpg");
 }
 
@@ -1283,15 +1277,12 @@ img {
   padding-right: 35px;
 }
 
-.catalog-item-price span::after {
-  content: "";
+.catalog-item-price .rub-icon {
   position: absolute;
-  display: block;
-  top: 11px;
-  right: 0;
-  width: 31px;
-  height: 36px;
-  background: transparent url("../img/icons/rub-icon.png") no-repeat top;
+  top: 12px;
+  right: 3px;
+  width: 27px;
+  height: 32px;
 }
 
 .catalog-item-title {
@@ -1454,30 +1445,15 @@ img {
   line-height: 22px;
 }
 
-.seo-content .seo-text::before {
-  content: "";
+.seo-content-manufacturing .icecream-icon,
+.seo-content-providers .cow-icon,
+.seo-content-materials .leaf-icon,
+.seo-content-delivery .thermometer-icon {
   position: absolute;
   left: 0px;
   top: 9px;
-  width: 49px;
-  height: 49px;
-  background-color: transparent;
-}
-
-.seo-content-manufacturing .seo-text::before {
-  background-image: url("../img/icons/icecream-icon.png");
-}
-
-.seo-content-providers .seo-text::before {
-  background-image: url("../img/icons/cow-icon.png");
-}
-
-.seo-content-materials .seo-text::before {
-  background-image: url("../img/icons/leaf-icon.png");
-}
-
-.seo-content-delivery .seo-text::before {
-  background-image: url("../img/icons/thermometer-icon.png");
+  width: 48px;
+  height: 48px;
 }
 
 .blog-news {
@@ -1657,6 +1633,7 @@ img {
 }
 .footer-social .social-btn-item {
   display: inline-block;
+  vertical-align: top;
   margin-right: 11px;
 }
 
@@ -1669,18 +1646,16 @@ img {
   width: 346px;
 }
 
-.footer-nav .heart-icon {
+.footer-nav .heart {
   font-weight: bold;
 }
 
-.footer-nav .heart-icon::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 5px;
-  width: 15px;
-  height: 13px;
-  background-image: url("../img/icons/heart-icon.png");
+.footer-nav .heart-icon {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 15px;
+    height: 13px;
 }
 
 .footer-nav-list {
