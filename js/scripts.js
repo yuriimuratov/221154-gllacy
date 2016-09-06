@@ -37,6 +37,10 @@ ymaps.ready(function() {
   var storage_user = localStorage.getItem("feedback-username");
   var storage_email = localStorage.getItem("feedback-email");
 
+  window.onload = function() {
+    comment.setAttribute('value', "");
+  }
+
   link.addEventListener("click", function(event) {
     event.preventDefault();
     popup.classList.add("feedback-popup-show");
