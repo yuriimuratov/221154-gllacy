@@ -27,15 +27,15 @@ ymaps.ready(function() {
 
 
 (function() {  
-  var popup = document.querySelector(".feedback-popup");
-  var link = document.querySelector("#feedback-button");
-  var close = popup.querySelector(".feedback-popup-close");
-  var form = popup.querySelector(".feedback-form");
-  var username = popup.querySelector("#feedback-username");
-  var email = popup.querySelector("#feedback-email");
-  var comment = popup.querySelector("#feedback-comment");
-  var storage_user = localStorage.getItem("feedback-username");
-  var storage_email = localStorage.getItem("feedback-email");
+  var popup = document.querySelector(".feedback-popup"),
+      link = document.querySelector("#feedback-button"),
+      close = popup.querySelector(".feedback-popup-close"),
+      form = popup.querySelector(".feedback-form"),
+      username = popup.querySelector("#feedback-username"),
+      email = popup.querySelector("#feedback-email"),
+      comment = popup.querySelector("#feedback-comment"),
+      storage_user = localStorage.getItem("feedback-username"),
+      storage_email = localStorage.getItem("feedback-email");
 
   window.onload = function() {
     comment.setAttribute('value', "");
@@ -96,7 +96,7 @@ ymaps.ready(function() {
 
   function parents(node) {
     var current = node,
-      list    = [];
+        list    = [];
     while(current.parentNode != null && current.parentNode != document.documentElement) {
       list.push(current.parentNode);
       current = current.parentNode;
